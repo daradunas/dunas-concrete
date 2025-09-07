@@ -26,10 +26,10 @@ export const additives: Additive[] = [
     image: "/additatives/sika-air.png",
   },
   {
-    name: "Xypex Waterproof",
+    name: "Waterproof",
     description: "Crystalline waterproofing seals internal pores",
     icon: Droplets,
-    image: "/additatives/xypex.png",
+    image: "/additatives/waterproof.png",
   },
   {
     name: "Sikagard® FlexCoat",
