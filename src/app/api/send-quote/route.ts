@@ -19,7 +19,8 @@ export async function POST(req: Request) {
     })
 
     const companyMailOptions = {
-      from: body.contactInformation.email,
+      from: process.env.SMTP_USER,
+      replyTo: body.contactInformation.email,
       to: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
       cc: process.env.OFFICE_RECIPIENTS?.split(",").map((email) => email.trim()),
       subject: `New Quote Request from ${body.contactInformation.name}`,

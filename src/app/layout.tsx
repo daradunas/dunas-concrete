@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/assets/styles/globals.css";
 import { siteConfig } from "@/config/site";
-import { ToasterProvider } from "@/app/(home)/_components/provider/toaster-provider";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { ToasterProvider } from "@/app/(home)/_components/provider/toaster-provider"
 
 const inter = Inter({
   variable: "--font-sans",
@@ -31,7 +30,6 @@ export default function RootLayout({
       >
         {children}
         <ToasterProvider />
-        <SpeedInsights />
       </body>
     </html>
   );
