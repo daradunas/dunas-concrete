@@ -29,7 +29,7 @@ export const additives: Additive[] = [
     name: "Waterproof",
     description: "Crystalline waterproofing seals internal pores",
     icon: Droplets,
-    image: "/additatives/waterproof.png",
+    image: "/additatives/waterproof-sika.png",
   },
   {
     name: "Sikagard® FlexCoat",
