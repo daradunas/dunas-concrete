@@ -1,0 +1,1 @@
+export const strengthOptions = ["2,500 PSI", "3,000 PSI", "3,500 PSI", "4,000 PSI", "5,000 PSI"]

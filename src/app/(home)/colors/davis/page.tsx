@@ -1,0 +1,56 @@
+"use client"
+
+import { useState } from "react"
+import { davisColors } from "@/data/colors-data"
+import { ColorsHeader } from "@/app/(home)/_components/colors/colors-header"
+import { ColorPreview3D } from "@/app/(home)/_components/colors/color-preview-3d"
+import { ColorsGrid } from "@/app/(home)/_components/colors/colors-grid"
+
+export default function DavisColorsPage() {
+  const [selectedColor, setSelectedColor] = useState(davisColors[0])
+
+  return (
+    <div className="min-h-screen pt-36 pb-24">
+      <div className="container mx-auto px-4">
+        <ColorsHeader
+          title="Davis Colors"
+          description="High-quality pigments for vibrant and durable concrete finishes."
+          colors={davisColors}
+          alternativeLink="/colors/sika"
+          alternativeText="See Sika colors"
+        />
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
+            <ColorsGrid
+              colors={davisColors}
+              selectedColor={selectedColor}
+              onSelect={setSelectedColor}
+            />
+          </div>
+
+          <div id="preview-section" className="lg:col-span-1">
+            <div className="sticky top-24">
+              <div className="rounded-2xl border bg-[var(--brand)] shadow-md overflow-hidden">
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)]">Color Preview</h3>
+                  <p className="text-sm text-[var(--text-secondary)]">
+                    See how{" "}
+                    <span className="text-[var(--yellow-500)] font-medium">
+                      {selectedColor.name}
+                    </span>{" "}
+                    looks on concrete
+                  </p>
+                </div>
+
+                <div className="relative h-[28rem]">
+                  <ColorPreview3D selectedColor={selectedColor} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
