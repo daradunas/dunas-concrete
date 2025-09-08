@@ -74,7 +74,7 @@ export function Footer() {
                             {products.map((product) => (
                                 <li key={product.id}>
                                     <Link
-                                        href="/products"
+                                        href={`/products/${product.slug}`}
                                         className="cursor-pointer transition-all duration-300 hover:translate-x-2 block"
                                         style={{ color: "var(--brand-footer-text-secondary)" }}
                                         onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-footer-accent)")}

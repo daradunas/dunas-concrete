@@ -32,9 +32,11 @@ declare global {
 
   type Product = {
     id: string
+    slug: string
     name: string
     description: string
     image: string | StaticImageData
+    image_quote: string | StaticImageData
     unit: string
     features: string[]
     badges: string[]

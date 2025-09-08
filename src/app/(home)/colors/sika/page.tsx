@@ -47,6 +47,9 @@ export default function SikaColorsPage() {
                   <ColorPreview3D selectedColor={selectedColor} />
                 </div>
               </div>
+              <p className="mt-3 text-xs text-center px-3 py-2 rounded-md bg-[var(--yellow-100)] text-[var(--amber-800)] border border-[var(--yellow-300)]">
+                ⚠️ Displayed color is for reference only; it may vary depending on the surface and application conditions.
+              </p>
             </div>
           </div>
         </div>

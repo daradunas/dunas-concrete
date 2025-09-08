@@ -74,7 +74,7 @@ export function generateClientConfirmationEmail(body: QuoteEmailBody) {
         <tr>
           <td style="background: #f4c03b; text-align: center; padding: 16px;">
             <p style="margin: 0; font-size: 14px; color: #1e293b;">
-              © ${new Date().getFullYear()} Your Company. All rights reserved.
+              © ${new Date().getFullYear()} Las Dunas Concrete. All rights reserved.
             </p>
           </td>
         </tr>

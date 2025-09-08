@@ -16,37 +16,48 @@ interface ProductDisplayProps {
 
 export function ProductDisplay({ product }: ProductDisplayProps) {
   return (
-    <div className="grid lg:grid-cols-2 gap-12 mb-16 items-center">
-      <div className="relative">
-        <div className="aspect-[4/3] max-w-md mx-auto rounded-2xl overflow-hidden bg-[var(--brand)]/10 backdrop-blur-sm border border-[var(--brand)]/20 shadow-2xl animate-float">
+    <div className="grid lg:grid-cols-2 gap-12 items-end mb-16">
+      <div className="relative flex justify-center">
+        <div className="max-w-lg -mb-10">
           <Image
-            src={product.image || "/placeholder.svg?height=400&width=400&query=product"}
+            src={product.image || "/placeholder.svg?height=500&width=500"}
             alt={product.name}
-            width={400}
-            height={300}
-            className="w-full h-full object-cover"
+            width={450}
+            height={350}
+            className="object-contain drop-shadow-2xl"
           />
         </div>
       </div>
 
       <div className="space-y-6">
-        <Card className="bg-[var(--brand)]/95 backdrop-blur-sm border-0 shadow-2xl">
+        <Card className="bg-[var(--brand)]/70 backdrop-blur-md border-0 shadow-2xl">
           <CardContent className="p-8">
             <div className="flex items-center gap-4 mb-4">
               {product.badges.map((badge, i) => (
-                <Badge key={i} variant="secondary" className="bg-[var(--yellow-100)] text-[var(--amber-800)]">
+                <Badge
+                  key={i}
+                  variant="secondary"
+                  className="bg-[var(--yellow-100)] text-[var(--amber-800)]"
+                >
                   {badge}
                 </Badge>
               ))}
             </div>
 
-            <H2 className="text-4xl font-bold text-[var(--text-primary)] mb-4 text-left">{product.name}</H2>
+            <H2 className="text-4xl font-bold text-[var(--text-primary)] mb-4 text-left">
+              {product.name}
+            </H2>
 
-            <p className="text-[var(--text-secundary)] text-lg leading-relaxed mb-6">{product.description}</p>
+            <p className="text-[var(--text-secundary)] text-lg leading-relaxed mb-6">
+              {product.description}
+            </p>
 
             <div className="grid grid-cols-2 gap-3 mb-8">
               {product.features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-sm text-[var(--text-secondary)]"
+                >
                   <div className="w-2 h-2 bg-[var(--yellow-400)] rounded-full"></div>
                   {feature}
                 </div>
@@ -56,7 +67,10 @@ export function ProductDisplay({ product }: ProductDisplayProps) {
             <div className="flex gap-4">
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button variant="outline" className="border-[var(--orange-light)] text-[var(--text-primary)] bg-transparent cursor-pointer hover:scale-105">
+                  <Button
+                    variant="outline"
+                    className="border-[var(--orange-light)] text-[var(--text-primary)] bg-transparent cursor-pointer hover:scale-105"
+                  >
                     <Info className="w-4 h-4 mr-2 text-[var(--orange-light)]" />
                     Learn more
                   </Button>

@@ -5,7 +5,7 @@ export const navItemsContent = [
     links: [],
   },
   {
-    content: "Colors",
+    content: "Concrete Colors",
     href: "/colors/sika",
     links: [],
   },

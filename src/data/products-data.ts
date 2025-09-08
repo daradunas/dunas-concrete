@@ -1,10 +1,12 @@
 export const products: Product[] = [
   {
     id: "p1",
+    slug: "38-rock",
     name: "3/8″ Rock",
     description:
       "Small gravel ideal for drainage, pathways, and precise foundational work. Great workability in tight forms.",
-    image: "/products/rock-38.png",
+    image: "/products/rock38-3d.png",
+    image_quote: "/products/quote/rock-38.png",
     features: ["Excellent drainage", "Smooth finish", "Lightweight handling", "Versatile base"],
     badges: ["2,500–5,000 PSI", "Sika/Davis Colors"],
     unit: "cubic yard",
@@ -12,10 +14,12 @@ export const products: Product[] = [
   },
   {
     id: "p2",
+    slug: "shotcrete",
     name: "Shotcrete",
     description:
       "High-velocity projected concrete for vertical walls, pools, and complex shapes. Speed and strength combined.",
-    image: "/products/shotcrete-application.png",
+    image: "/products/shotcrete-3d.png",
+    image_quote: "/products/quote/shotcrete-application.png",
     features: ["Vertical application", "Fast placement", "High adhesion", "Complex geometries"],
     badges: ["3,000–5,000 PSI", "Sika/Davis Colors"],
     unit: "cubic yard",
@@ -23,10 +27,12 @@ export const products: Product[] = [
   },
   {
     id: "p3",
+    slug: "slurry",
     name: "Slurry",
     description:
       "Fluid mixture used for stabilizing subgrades and filling voids. Ideal for repairs and specialized applications.",
-    image: "/products/slurry-product.png",
+    image: "/products/slurry-3d.png",
+    image_quote: "/products/quote/slurry.png",
     features: ["Repair ready", "Void filling", "Flowable mix", "Leveling aid"],
     badges: ["Custom Mix", "Sika/Davis Colors"],
     unit: "cubic yard",
@@ -34,10 +40,12 @@ export const products: Product[] = [
   },
   {
     id: "p4",
+    slug: "34-rock",
     name: "3/4″ Rock",
     description:
       "Large aggregate with superior load-bearing capacity. A robust solution for structural foundations and slabs.",
-    image: "/products/roca-34.png",
+    image: "/products/rock34-3d.png",
+    image_quote: "/products/quote/roca-34.png",
     features: ["Structural strength", "Heavy-duty base", "Durability", "Load-bearing"],
     badges: ["3,000–5,000 PSI", "Sika/Davis Colors"],
     unit: "cubic yard",
@@ -45,10 +53,12 @@ export const products: Product[] = [
   },
   {
     id: "p5",
+    slug: "city-mix",
     name: "City-Mix",
     description:
       "Premium urban mixture designed for high-performance civil construction and consistent finish quality.",
-    image: "/products/slurry.png",
+    image: "/products/city-mix-3d.png",
+    image_quote: "/products/quote/slurry-product.png",
     features: ["Premium finish", "Consistent quality", "Urban-grade", "Fast setting options"],
     badges: ["2,500–4,000 PSI", "Sika/Davis Colors"],
     unit: "cubic yard",

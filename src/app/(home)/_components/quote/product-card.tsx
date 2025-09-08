@@ -73,11 +73,18 @@ export function ProductCard({
     setColorDialogOpen(false)
   }
 
+  const handleRemoveColor = () => {
+    setLocalColor(undefined)
+    if (cartItem) {
+      onUpdateColor(product.id, selectedPsi, { name: "", hex: "" })
+    }
+  }
+
   return (
     <Card className="group hover:shadow-xl transition-all duration-300 border-[var(--bg-light)] hover:border-[var(--yellow-500)] p-0">
       <div className="relative">
         <Image
-          src={product.image || "/placeholder.svg?height=300&width=400&query=product"}
+          src={product.image_quote || "/placeholder.svg?height=300&width=400&query=product"}
           alt={product.name}
           width={400}
           height={200}
@@ -117,6 +124,14 @@ export function ProductCard({
                     style={{ backgroundColor: currentColor.hex }}
                   />
                   <span className="text-xs text-slate-600">{currentColor.name}</span>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-[var(--brand-redish)] hover:text-[var(--brand-redish)] hover:bg-red-50 px-2 h-6"
+                    onClick={handleRemoveColor}
+                  >
+                    Remove
+                  </Button>
                 </div>
               )}
             </div>
@@ -137,7 +152,9 @@ export function ProductCard({
                     <TabsTrigger value="sika">Sika Colors</TabsTrigger>
                     <TabsTrigger value="davis">Davis Colors</TabsTrigger>
                   </TabsList>
-
+                  <p className="text-xs text-center px-3 py-2 rounded-md bg-[var(--yellow-100)] text-[var(--amber-800)] border border-[var(--yellow-300)]">
+                    ⚠️ Displayed color is for reference only; it may vary depending on the surface and application conditions.
+                  </p>
                   <TabsContent value="sika">
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-h-[400px] overflow-y-auto">
                       {sikaColors.map((color, idx) => {

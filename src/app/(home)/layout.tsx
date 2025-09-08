@@ -21,7 +21,7 @@ export default function HomeLayout({
   }, []);
 
   const pathname = usePathname()
-  const hideFooterRoutes = ["/products"]
+  const hideFooter = pathname.startsWith("/products")
 
   return (
     <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
@@ -33,7 +33,7 @@ export default function HomeLayout({
         <WhatsAppButton />
         <ScrollToTopButton />
       </ViewTransition>
-      {!hideFooterRoutes.includes(pathname) && <Footer />}
+      {!hideFooter && <Footer />}
     </div>
   );
 }
