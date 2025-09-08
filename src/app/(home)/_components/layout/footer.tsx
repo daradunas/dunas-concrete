@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Separator } from "@/components/ui/separator"
 import { H4, TypographyMuted } from "@/components/typography"
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import Image from "next/image"
 
 const socialIcons = [
     {
@@ -32,10 +33,13 @@ export function Footer() {
                 <div className="grid grid-cols-4 max-lg:grid-cols-3 max-sm:grid-cols-1 gap-12">
                     <div>
                         <div className="flex items-center space-x-3 mb-1">
-                            <div className="w-12 h-12 bg-[var(--brand-footer-accent)] rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" translate="no">
-                                <span className="text-[var(--text-primary)] font-bold text-xl notranslate">DC</span>
-                            </div>
-                            <span className="text-2xl font-bold" style={{ color: "var(--brand-footer-text-primary)" }}>
+                            <Image
+                                src="/logo.ico"
+                                width={55}
+                                height={55}
+                                alt="Logo"
+                            />
+                            <span className="text-2xl font-bold max-md:text-[20px]" style={{ color: "var(--brand-footer-text-primary)" }}>
                                 Las Dunas Concrete
                             </span>
                         </div>

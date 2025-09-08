@@ -61,28 +61,28 @@ export default function ProductCarousel() {
               <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] relative">
                 <div className="relative h-64 sm:h-80 lg:h-full">
                   <Image
-                    src={product.image || "/placeholder.svg"}
+                    src={product.image_quote || "/placeholder.svg"}
                     alt={product.name}
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[var(--background-black)]/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-l from-[var(--background-black)]/50 via-transparent to-transparent" />
                 </div>
 
                 <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center text-[var(--text-white)] relative">
-                  <Badge className="bg-white/20 text-white border-white/30 mb-3 sm:mb-4">Premium Product</Badge>
+                  <Badge className="bg-[var(--brand)]/20 text-[var(--text-white)] border-[var(--brand)]/30 mb-3 sm:mb-4">Premium Product</Badge>
                   <H3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 bg-clip-text bg-gradient-to-r text-[var(--text-white)]">
                     {product.name}
                   </H3>
-                  <p className="text-base sm:text-lg text-blue-100 mb-4 sm:mb-6 leading-relaxed">
+                  <p className="text-base sm:text-lg text-[var(--text-white)]/80 mb-4 sm:mb-6 leading-relaxed">
                     {product.description}
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-6 sm:mb-8">
                     {product.features.map((f, idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        <CheckCircle className="w-4 h-4 text-[var(--green-brand)]" />
                         <span className="text-sm text-[var(--text-white)]">{f}</span>
                       </div>
                     ))}
@@ -117,7 +117,7 @@ export default function ProductCarousel() {
             aria-current={i === current ? "true" : undefined}
             className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 cursor-pointer ${i === current
               ? "bg-[var(--brand-primary)] scale-125"
-              : "bg-white/50 hover:bg-white/80"
+              : "bg-[var(--brand)]/50 hover:bg-[var(--brand)]/80"
               }`}
           />
         ))}

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
 import {
   Tooltip,
   TooltipContent,
@@ -31,23 +32,33 @@ export default function WhatsAppButton() {
       <TooltipProvider delayDuration={0}>
         <Tooltip defaultOpen={defaultOpen}>
           <TooltipTrigger asChild>
-            <a
+            <motion.a
               href={url}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Contact via WhatsApp"
+              animate={{ scale: [1, 1.12, 1] }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
               className="flex items-center justify-center w-14 h-14 
                          bg-[var(--whatsapp-green)] 
                          hover:bg-[var(--whatsapp-green-hover)] 
                          text-[var(--text-white)] 
                          rounded-full shadow-lg 
-                         transition-all duration-300 hover:scale-110 
                          focus:outline-none focus:ring-2 
                          focus:ring-[var(--whatsapp-green-ring)] 
                          cursor-pointer"
-              aria-label="Contact via WhatsApp"
+              style={{
+                boxShadow: "0 0 18px rgba(37, 211, 102, 0.6)",
+              }}
             >
               <FaWhatsapp className="w-7 h-7" />
-            </a>
+            </motion.a>
           </TooltipTrigger>
           <TooltipContent
             side="right"

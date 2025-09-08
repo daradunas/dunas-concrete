@@ -39,16 +39,17 @@ export default function ProductsPage({ params }: ProductsPageProps) {
   }
 
   return (
-    <div className="h-screen pt-20 relative flex flex-col bg-cover bg-center bg-no-repeat">
+    <div className="min-h-screen pt-20 relative flex flex-col bg-cover bg-center bg-no-repeat">
       <ConcreteScene />
 
-      <div className="relative z-10 flex-1 flex items-end justify-center pb-32 px-6">
-        <div className="w-full max-w-6xl">
+      <div className="relative z-10 flex-1 flex items-center justify-center px-4 lg:px-6">
+        <div className="w-full max-w-6xl 2xl:max-w-7xl">
           <ProductDisplay product={selectedProduct} />
         </div>
+
       </div>
 
-      <div className="absolute top-1/2 left-40 -translate-y-1/2 z-20 h-[55%] w-24">
+      <div className="relative xl:absolute xl:top-1/2 xl:left-6 xl:-translate-y-1/2 z-20 w-full xl:w-24 h-28 xl:h-[55%] mx-auto xl:mx-0">
         <ProductsGallery
           selectedProduct={selectedProduct}
           onProductSelect={handleProductSelect}

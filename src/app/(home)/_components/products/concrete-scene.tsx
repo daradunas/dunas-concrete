@@ -2,7 +2,7 @@
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber"
 import { Environment } from "@react-three/drei"
 import { Suspense, useRef, useState, useEffect, useCallback } from "react"
-import { TextureLoader, type Group, type Mesh, type PerspectiveCamera, MathUtils, ClampToEdgeWrapping } from "three"
+import { TextureLoader, type Group, type Mesh, type PerspectiveCamera, MathUtils, ClampToEdgeWrapping, LinearFilter } from "three"
 
 export function ConcreteScene() {
   return (
@@ -25,17 +25,34 @@ function BackgroundImage({ url, depth = -20, parallax = 0.015 }: { url: string; 
     const cam = camera as PerspectiveCamera
     const fov = MathUtils.degToRad(cam.fov)
     const dist = cam.position.z - depth
-    const height = 2 * Math.tan(fov / 2) * dist
-    const width = height * (size.width / size.height)
-    meshRef.current?.scale.set(width, height, 1)
-  }, [camera, size, depth])
+    const viewportHeight = 2 * Math.tan(fov / 2) * dist
+    const viewportWidth = viewportHeight * (size.width / size.height)
+
+    const imageAspect = texture.image.width / texture.image.height
+    const viewportAspect = viewportWidth / viewportHeight
+
+    let scaleX = viewportWidth
+    let scaleY = viewportHeight
+
+    if (viewportAspect > imageAspect) {
+      scaleY = viewportWidth / imageAspect
+    } else {
+      scaleX = viewportHeight * imageAspect
+    }
+
+    meshRef.current?.scale.set(scaleX, scaleY, 1)
+  }, [camera, size, depth, texture])
+
 
   useEffect(() => {
     texture.wrapS = ClampToEdgeWrapping
     texture.wrapT = ClampToEdgeWrapping
+    texture.minFilter = LinearFilter
+    texture.magFilter = LinearFilter
     texture.needsUpdate = true
     updateScale()
   }, [texture, updateScale])
+
 
   useEffect(() => {
     const onResize = () => updateScale()

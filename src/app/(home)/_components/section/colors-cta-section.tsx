@@ -27,14 +27,13 @@ export default function ColorsCta() {
                     {"Customize your concrete with our wide range of professional colors"}
                 </p>
 
-                <div className="bg-gradient-to-br from-[var(--brand)] to-[var(--brand)] rounded-3xl p-8 border border-white/20 shadow-xl">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className="flex items-center gap-6 text-left">
+                <div className="bg-gradient-to-br from-[var(--brand)] to-[var(--brand)] rounded-3xl p-8 border border-[var(--brand)]/20 shadow-xl">
+                    <div className="grid min-lg:grid-cols-2 gap-12 items-center">
+                        <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
                             <Image
                                 src={sikaColors}
                                 alt="Sika Colors"
-                                width={150}
-                                className="rounded-xl object-contain"
+                                className="w-full max-w-[150px] h-auto rounded-xl object-contain"
                             />
                             <div>
                                 <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
@@ -51,12 +50,11 @@ export default function ColorsCta() {
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-6 text-left">
+                        <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
                             <Image
                                 src={davisColors}
                                 alt="Davis Colors"
-                                width={150}
-                                className="rounded-xl object-contain"
+                                className="w-full max-w-[150px] h-auto rounded-xl object-contain"
                             />
                             <div>
                                 <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
@@ -73,6 +71,7 @@ export default function ColorsCta() {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>

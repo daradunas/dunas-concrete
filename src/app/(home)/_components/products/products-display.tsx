@@ -1,5 +1,6 @@
 "use client"
 
+import { motion } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -16,22 +17,36 @@ interface ProductDisplayProps {
 
 export function ProductDisplay({ product }: ProductDisplayProps) {
   return (
-    <div className="grid lg:grid-cols-2 gap-12 items-end mb-16">
+    <motion.div
+      key={product.id}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8"
+    >
       <div className="relative flex justify-center">
-        <div className="max-w-lg -mb-10">
+        <div className="w-full max-w-xs sm:max-w-md lg:max-w-lg">
           <Image
             src={product.image || "/placeholder.svg?height=500&width=500"}
             alt={product.name}
             width={450}
-            height={350}
-            className="object-contain drop-shadow-2xl"
+            height={345}
+            className="w-full h-auto max-h-[72vh] object-contain drop-shadow-2xl"
           />
         </div>
       </div>
 
-      <div className="space-y-6">
-        <Card className="bg-[var(--brand)]/70 backdrop-blur-md border-0 shadow-2xl">
-          <CardContent className="p-8">
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -40 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex justify-center lg:justify-end w-full"
+      >
+        <Card className="bg-[var(--brand)]/70 backdrop-blur-md border-0 shadow-2xl 
+                w-full max-w-3xl xl:translate-x-8">
+          <CardContent className="p-6 sm:p-10">
             <div className="flex items-center gap-4 mb-4">
               {product.badges.map((badge, i) => (
                 <Badge
@@ -87,7 +102,7 @@ export function ProductDisplay({ product }: ProductDisplayProps) {
             </div>
           </CardContent>
         </Card>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
