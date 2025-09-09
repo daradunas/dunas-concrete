@@ -50,7 +50,7 @@ export function TrustedFamilySection() {
         </div>
 
         <div className="relative">
-          <WhoWeAreImage src="/about/Eduardo.png" alt="Equipo Las Dunas" withReview />
+          <WhoWeAreImage src="/products/background/background-3d-2.png" alt="Equipo Las Dunas" withReview />
         </div>
       </div>
     </div>
