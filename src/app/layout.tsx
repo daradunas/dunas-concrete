@@ -14,7 +14,19 @@ export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
   icons: {
-    icon: "/logo.svg",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon0.svg", type: "image/svg+xml" },
+      { url: "/icon1.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "manifest", url: "/manifest.json" },
+      { rel: "android-chrome", url: "/web-app-manifest-192x192.png", sizes: "192x192" },
+      { rel: "android-chrome", url: "/web-app-manifest-512x512.png", sizes: "512x512" },
+    ],
   },
 };
 
