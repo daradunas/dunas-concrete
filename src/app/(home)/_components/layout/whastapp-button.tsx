@@ -9,9 +9,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { usePathname } from "next/navigation";
 
 export default function WhatsAppButton() {
   const [defaultOpen, setDefaultOpen] = useState(false);
+  const pathname = usePathname();
+
+  const hideWhastapp = pathname.startsWith("/products");
 
   const url = `https://wa.me/18184382654?text=${encodeURIComponent(
     "Hello! I'm interested in your concrete services."
@@ -26,6 +30,8 @@ export default function WhatsAppButton() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  if (hideWhastapp) return null;
 
   return (
     <div className="fixed bottom-6 left-6 z-50">

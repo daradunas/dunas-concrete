@@ -2,9 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { ChevronUp } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const pathname = usePathname();
+
+  const hideScroll = pathname.startsWith("/products");
 
   useEffect(() => {
     let ticking = false;
@@ -22,7 +26,7 @@ export default function ScrollToTopButton() {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     handleScroll();
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -31,6 +35,8 @@ export default function ScrollToTopButton() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  if (hideScroll) return null;
 
   return (
     isVisible && (

@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
     viewTransition: true,
     useCache: true,
   },
+  images: {
+    unoptimized: true,
+  },
+  compiler: {
+    removeConsole: true,
+  },
 };
 
 export default nextConfig;

@@ -25,7 +25,7 @@ export function ProductDisplay({ product }: ProductDisplayProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8"
     >
-      <div className="relative flex justify-center">
+      <div className="relative flex justify-center pt-15">
         <div className="w-full max-w-xs sm:max-w-md lg:max-w-lg">
           <Image
             src={product.image || "/placeholder.svg?height=500&width=500"}
@@ -36,16 +36,8 @@ export function ProductDisplay({ product }: ProductDisplayProps) {
           />
         </div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -40 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex justify-center lg:justify-end w-full"
-      >
-        <Card className="bg-[var(--brand)]/70 backdrop-blur-md border-0 shadow-2xl 
-                w-full max-w-3xl xl:translate-x-8">
+      <div className="flex justify-center">
+        <Card className="bg-[var(--brand)]/70 backdrop-blur-md border-0 shadow-2xl w-full max-w-3xl xl:translate-x-8">
           <CardContent className="p-6 sm:p-10">
             <div className="flex items-center gap-4 mb-4">
               {product.badges.map((badge, i) => (
@@ -102,7 +94,7 @@ export function ProductDisplay({ product }: ProductDisplayProps) {
             </div>
           </CardContent>
         </Card>
-      </motion.div>
+      </div>
     </motion.div>
   )
 }

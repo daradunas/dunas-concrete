@@ -3,7 +3,7 @@
 import { products } from "@/data/products-data"
 import Link from "next/link"
 import { Separator } from "@/components/ui/separator"
-import { H4, TypographyMuted } from "@/components/typography"
+import { H2, TypographyMuted } from "@/components/typography"
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import Image from "next/image"
 
@@ -34,7 +34,7 @@ export function Footer() {
                     <div>
                         <div className="flex items-center space-x-3 mb-1">
                             <Image
-                                src="/logo.ico"
+                                src="/logo.svg"
                                 width={55}
                                 height={55}
                                 alt="Logo"
@@ -72,7 +72,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <H4 style={{ color: "var(--brand-footer-text-primary)" }}>Products</H4>
+                        <H2 className="scroll-m-20 text-xl p-0 text-left" style={{ color: "var(--brand-footer-text-primary)" }}>Products</H2>
                         <Separator className="my-6 max-w-[300px]" style={{ backgroundColor: "var(--brand-footer-accent)" }} />
                         <ul className="space-y-3">
                             {products.map((product) => (
@@ -92,7 +92,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <H4 style={{ color: "var(--brand-footer-text-primary)" }}>Contact</H4>
+                        <H2 className="scroll-m-20 text-xl p-0 text-left" style={{ color: "var(--brand-footer-text-primary)" }}>Contact</H2>
                         <Separator className="my-6 max-w-[300px]" style={{ backgroundColor: "var(--brand-footer-accent)" }} />
 
                         <div className="flex flex-col space-y-4">
@@ -126,7 +126,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <H4 style={{ color: "var(--brand-footer-text-primary)" }}>Our location</H4>
+                        <H2 className="scroll-m-20 text-xl p-0 text-left" style={{ color: "var(--brand-footer-text-primary)" }}>Our location</H2>
                         <Separator className="my-6 max-w-[300px]" style={{ backgroundColor: "var(--brand-footer-accent)" }} />
 
                         <div className="flex flex-col space-y-4 h-60">
@@ -138,6 +138,8 @@ export function Footer() {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
+                                sandbox="allow-scripts allow-same-origin allow-popups"
+                                title="Las Dunas Concrete location on Google Maps"
                             />
                         </div>
                     </div>

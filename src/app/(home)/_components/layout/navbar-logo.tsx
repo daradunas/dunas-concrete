@@ -15,7 +15,7 @@ export const NavbarLogo = ({ href = "/" }: NavbarLogoProps) => {
       className="flex items-center space-x-2 sm:space-x-3 hover:scale-105 transition-transform duration-300"
     >
       <Image
-        src="/logo.ico"
+        src="/logo.svg"
         width={60}
         height={60}
         alt="Logo"

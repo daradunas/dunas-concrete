@@ -120,7 +120,7 @@ export function OrderSummarySection({
 
         <div className="text-center">
           <p className="text-xs text-slate-500 mb-2">Need help? Contact us directly:</p>
-          <div className="flex items-center justify-center space-x-4 text-sm">
+          <div className="flex items-center justify-center space-x-4 text-sm max-xl:text-[10px]">
             <a href={`tel:${telf}`} className="flex items-center text-blue-600 hover:text-blue-800">
               <Phone className="w-4 h-4 mr-1" />
               {telf}

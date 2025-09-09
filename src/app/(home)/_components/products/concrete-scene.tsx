@@ -6,7 +6,7 @@ import { TextureLoader, type Group, type Mesh, type PerspectiveCamera, MathUtils
 
 export function ConcreteScene() {
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="fixed inset-0 -z-10 overflow-hidden">
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
         <Suspense fallback={null}>
           <Scene />

@@ -11,6 +11,8 @@ export default function GoogleMap() {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        title="Las Dunas Concrete location on Google Maps"
       />
     </div>
   )

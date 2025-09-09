@@ -110,6 +110,7 @@ export default function HeroSection() {
                 width={400}
                 height={300}
                 priority
+                fetchPriority="high"
                 className={`${baseImg} w-[280px] sm:w-[320px] left-[-80px] max-sm:w-0 bottom-[-100px]`}
               />
 
