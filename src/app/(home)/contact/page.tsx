@@ -112,9 +112,9 @@ export default function ContactPage() {
                       className="w-full bg-gradient-to-r bg-[var(--brand-primary)] hover:bg-[var(--brand-primary)] text-base sm:text-lg py-4 sm:py-6 shadow-xl shadow-orange-500/25 
                     border-0 hover:scale-105 transition-all duration-300 text-shadow-md text-[var(--text-primar)] cursor-pointer"
                     >
-                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                      <Phone className="hidden sm:inline w-4 h-4 sm:w-5 sm:h-5" />
                       Request Immediate Quote
-                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                      <ArrowRight className="hidden sm:inline w-4 h-4 sm:w-5 sm:h-5" />
                     </Button>
                   </Link>
                 </div>

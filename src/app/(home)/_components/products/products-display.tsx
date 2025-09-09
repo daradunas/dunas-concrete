@@ -78,7 +78,7 @@ export function ProductDisplay({ product }: ProductDisplayProps) {
                     variant="outline"
                     className="border-[var(--orange-light)] text-[var(--text-primary)] bg-transparent cursor-pointer hover:scale-105"
                   >
-                    <Info className="w-4 h-4 mr-2 text-[var(--orange-light)]" />
+                    <Info className="hidden sm:inline w-4 h-4 text-[var(--orange-light)]" />
                     Learn more
                   </Button>
                 </DialogTrigger>
@@ -86,9 +86,18 @@ export function ProductDisplay({ product }: ProductDisplayProps) {
                   <ProductDialog product={product} isOpen />
                 </DialogContent>
               </Dialog>
-              <Link href="/quote">
-                <Button className="bg-gradient-to-r bg-[var(--yellow-500)] hover:bg-[var(--orange-light)] text-[var(--text-primary)] border-0 shadow-md cursor-pointer hover:scale-105">
-                  Request Quote <ArrowRight className="w-4 h-4 ml-2" />
+              <Link href="/quote" className="flex">
+                <Button
+                  className="
+                    bg-gradient-to-r bg-[var(--yellow-500)] hover:bg-[var(--orange-light)]
+                    text-[var(--text-primary)] border-0 shadow-md cursor-pointer hover:scale-105
+                    min-w-[160px] text-center leading-tight flex items-center justify-center gap-2 px-4 py-2
+                  "
+                >
+                  <span className="whitespace-pre-line text-sm sm:text-base">
+                    Request <br className="sm:hidden" /> Quote
+                  </span>
+                  <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
             </div>
