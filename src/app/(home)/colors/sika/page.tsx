@@ -29,7 +29,7 @@ export default function SikaColorsPage() {
             />
           </div>
 
-          <div id="preview-section" className="lg:col-span-1">
+          <div id="preview-section" className="lg:col-span-1" data-aos="fade-up">
             <div className="sticky top-24">
               <div className="rounded-2xl border bg-[var(--brand)] shadow-md overflow-hidden">
                 <div className="p-4">

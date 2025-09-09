@@ -11,7 +11,7 @@ const features = [
 
 export function TrustedFamilySection() {
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4" data-aos="fade-up">
       <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
         <div className="space-y-8">
           <H2 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">

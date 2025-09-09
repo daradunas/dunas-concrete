@@ -38,7 +38,7 @@ export default function ContactPage() {
   return (
     <>
       <section id="contact" className="px-4 sm:px-8 md:px-12 lg:px-20 pt-20 relative">
-        <div className="container mx-auto px-4 relative text-center mb-16 mt-16">
+        <div className="container mx-auto px-4 relative text-center mb-16 mt-16" data-aos="fade-up">
           <span className="inline-block rounded-full px-3 py-1 text-sm font-medium bg-[var(--yellow-light)] text-[var(--text-primary)] shadow">
             {"📞 Contact Us"}
           </span>
@@ -123,7 +123,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      <div>
+      <div data-aos="fade-up">
         <GoogleMap />
       </div>
     </>

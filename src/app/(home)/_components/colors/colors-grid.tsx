@@ -21,6 +21,7 @@ export function ColorsGrid({ colors, selectedColor, onSelect }: ColorsGridProps)
               selectedColor.hex === color.hex ? "ring-2 ring-[var(--yellow-500)]" : ""
             }`}
             onClick={() => onSelect(color)}
+            data-aos="fade-up"
           >
             <CardHeader className="p-0">
               <div

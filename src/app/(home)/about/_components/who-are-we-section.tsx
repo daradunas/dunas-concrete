@@ -9,7 +9,7 @@ export default function WhoAreWeSection() {
     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start" data-aos="fade-up">
             <div className="relative order-2 lg:order-1">
               <WhoWeAreImage
                 src="/about/construction.png"
@@ -55,7 +55,7 @@ export default function WhoAreWeSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mt-12 lg:mt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mt-12 lg:mt-16" data-aos="fade-up">
             <div className="space-y-8 lg:space-y-12">
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 mb-4">

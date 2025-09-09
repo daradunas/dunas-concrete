@@ -11,7 +11,7 @@ export default function AboutPage() {
       className="px-4 sm:px-8 md:px-12 lg:px-20 pt-20 sm:pt-24 lg:pt-30 pb-12 sm:pb-16 lg:pb-20 relative"
     >
       <div className="container mx-auto px-4">
-        <H2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 text-center max-w-3xl mx-auto">
+        <H2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 text-center max-w-3xl mx-auto" data-aos="fade-up">
           <span className="text-[var(--text-primary)]">Who are </span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--yellow-400)] via-[var(--orange-light)] to-[var(--yellow-500)]">
             We

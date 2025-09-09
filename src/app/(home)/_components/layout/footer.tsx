@@ -28,10 +28,10 @@ export function Footer() {
     const telf = process.env.NEXT_PUBLIC_CONTACT_PHONE || ""
     const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || ""
     return (
-        <footer className="relative overflow-hidden py-16" style={{ background: "var(--brand-footer-bg)" }}>
+        <footer className="relative overflow-hidden py-16" style={{ background: "var(--brand-footer-bg)" }} data-aos="fade-up" suppressHydrationWarning>
             <div className="container mx-auto px-4 relative">
                 <div className="grid grid-cols-4 max-lg:grid-cols-3 max-sm:grid-cols-1 gap-12">
-                    <div>
+                    <div  data-aos="fade-up">
                         <div className="flex items-center space-x-3 mb-1">
                             <Image
                                 src="/logo.svg"
@@ -71,7 +71,7 @@ export function Footer() {
                         </div>
                     </div>
 
-                    <div>
+                    <div data-aos="fade-up">
                         <H2 className="scroll-m-20 text-xl p-0 text-left" style={{ color: "var(--brand-footer-text-primary)" }}>Products</H2>
                         <Separator className="my-6 max-w-[300px]" style={{ backgroundColor: "var(--brand-footer-accent)" }} />
                         <ul className="space-y-3">
@@ -91,7 +91,7 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    <div>
+                    <div data-aos="fade-up">
                         <H2 className="scroll-m-20 text-xl p-0 text-left" style={{ color: "var(--brand-footer-text-primary)" }}>Contact</H2>
                         <Separator className="my-6 max-w-[300px]" style={{ backgroundColor: "var(--brand-footer-accent)" }} />
 
@@ -125,7 +125,7 @@ export function Footer() {
                         </div>
                     </div>
 
-                    <div>
+                    <div data-aos="fade-up">
                         <H2 className="scroll-m-20 text-xl p-0 text-left" style={{ color: "var(--brand-footer-text-primary)" }}>Our location</H2>
                         <Separator className="my-6 max-w-[300px]" style={{ backgroundColor: "var(--brand-footer-accent)" }} />
 

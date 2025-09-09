@@ -8,7 +8,7 @@ import { Footer } from "@/app/(home)/_components/layout/footer"
 import { navItemsContent } from "@/config/navitagion"
 
 export default function GlobalNotFound() {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "/"
+    const baseUrl = "/"
     return (
         <>
             <Navbar navItems={navItemsContent} />

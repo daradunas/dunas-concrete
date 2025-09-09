@@ -38,7 +38,7 @@ export function OrderSummarySection({
   const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || ""
 
   return (
-    <Card className="bg-gradient-to-br from-[var(--bg-light)] via-[var(--bg-light)]/80 to-[var(--bg-light)]/80 backdrop-blur-sm border-0 shadow-xl sticky top-24">
+    <Card className="bg-gradient-to-br from-[var(--bg-light)] via-[var(--bg-light)]/80 to-[var(--bg-light)]/80 backdrop-blur-sm border-0 shadow-xl sticky top-24" data-aos="fade-up">
       <CardHeader>
         <CardTitle className="text-xl text-[var(--text-primary)] flex items-center">
           <Calculator className="w-5 h-5 mr-2 text-[var(--orange-light)]" strokeWidth={3}/>

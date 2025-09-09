@@ -81,7 +81,7 @@ export function ProductCard({
   }
 
   return (
-    <Card className="group hover:shadow-xl transition-all duration-300 border-[var(--bg-light)] hover:border-[var(--yellow-500)] p-0">
+    <Card className="group hover:shadow-xl transition-all duration-300 border-[var(--bg-light)] hover:border-[var(--yellow-500)] p-0" data-aos="fade-up">
       <div className="relative">
         <Image
           src={product.image_quote || "/placeholder.svg?height=300&width=400&query=product"}

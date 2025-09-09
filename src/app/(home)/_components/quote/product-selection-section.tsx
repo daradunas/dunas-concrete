@@ -29,7 +29,7 @@ export function ProductSelectionSection({
   generateQuantityOptions,
 }: ProductSelectionSectionProps) {
   return (
-    <Card className="bg-[var(--bg-light)]/70 backdrop-blur-sm border-0 shadow-xl">
+    <Card className="bg-[var(--bg-light)]/70 backdrop-blur-sm border-0 shadow-xl" data-aos="fade-up">
       <CardHeader>
         <CardTitle className="text-2xl text-[var(--text-primary)] flex items-center">
           <Truck className="w-6 h-6 mr-3 text-[var(--orange-light)]" />
