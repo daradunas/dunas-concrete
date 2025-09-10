@@ -13,28 +13,27 @@ export function ColorsGrid({ colors, selectedColor, onSelect }: ColorsGridProps)
 
   return (
     <section>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-6">
         {colors.map((color, index) => (
-          <Card
-            key={index}
-            className={`group hover:shadow-xl transition-all duration-300 border-[var(--slate-200)] ${hoverClasses} hover:scale-105 overflow-hidden p-0 cursor-pointer ${
-              selectedColor.hex === color.hex ? "ring-2 ring-[var(--yellow-500)]" : ""
-            }`}
-            onClick={() => onSelect(color)}
-            data-aos="fade-up"
-          >
-            <CardHeader className="p-0">
-              <div
-                className="w-full h-36 sm:h-20 md:h-30"
-                style={{ backgroundColor: color.hex }}
-                aria-label={`${color.name} color swatch`}
-              />
-            </CardHeader>
-            <CardContent className="p-4 text-center">
-              <CardTitle className="text-lg font-semibold text-[var(--text-primary)]">{color.name}</CardTitle>
-              <p className="text-sm text-[var(--text-secondary)]">{color.hex}</p>
-            </CardContent>
-          </Card>
+          <div key={index} data-aos="fade-up">
+            <Card
+              className={`w-full h-full group hover:shadow-xl transition-all duration-300 border-[var(--slate-200)] ${hoverClasses} hover:scale-105 overflow-hidden p-0 cursor-pointer ${selectedColor.hex === color.hex ? "ring-2 ring-[var(--yellow-500)]" : ""
+                }`}
+              onClick={() => onSelect(color)}
+            >
+              <CardHeader className="p-0">
+                <div
+                  className="w-full h-36 sm:h-20 md:h-30"
+                  style={{ backgroundColor: color.hex }}
+                  aria-label={`${color.name} color swatch`}
+                />
+              </CardHeader>
+              <CardContent className="p-4 text-center">
+                <CardTitle className="text-lg font-semibold text-[var(--text-primary)]">{color.name}</CardTitle>
+                <p className="text-sm text-[var(--text-secondary)]">{color.hex}</p>
+              </CardContent>
+            </Card>
+          </div>
         ))}
       </div>
     </section>

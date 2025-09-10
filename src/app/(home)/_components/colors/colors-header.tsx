@@ -14,7 +14,7 @@ interface ColorsHeaderProps {
 
 export function ColorsHeader({ title, description, alternativeLink, alternativeText }: ColorsHeaderProps) {
   const buttonClasses =
-    "border-2 border-[var(--yellow-500)] text-[var(--text-primary)] hover:bg-[var(--bg-gray-100)] hover:border-[var(--orange-light)]"
+    "border-2 border-[var(--yellow-500)] text-[var(--text-primary)] hover:bg-[var(--bg-gray-100)] hover:border-[var(--orange-light)] cursor-pointer"
 
   return (
     <div className="flex flex-col-reverse gap-6 mb-8 md:flex-row md:items-center md:justify-between" data-aos="fade-up">
@@ -37,7 +37,7 @@ export function ColorsHeader({ title, description, alternativeLink, alternativeT
 
         <a
           href="#preview-section"
-          className="lg:hidden"
+          className="lg:hidden cursor-pointer"
         >
           <Button variant="outline" className={buttonClasses}>
             Go to Preview
