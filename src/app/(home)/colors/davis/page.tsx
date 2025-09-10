@@ -36,7 +36,7 @@ export default function DavisColorsPage() {
                   <h3 className="text-lg font-semibold text-[var(--text-primary)]">Color Preview</h3>
                   <p className="text-sm text-[var(--text-secondary)]">
                     See how{" "}
-                    <span className="text-[var(--yellow-500)] font-medium">
+                    <span className="text-[var(--yellow-500)] font-medium" translate="no">
                       {selectedColor.name}
                     </span>{" "}
                     looks on concrete
