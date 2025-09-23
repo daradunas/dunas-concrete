@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { CalendarIcon, Mail } from "lucide-react"
 import type { UseFormReturn } from "react-hook-form"
 import type { ContactFormData } from "@/lib/schemas"
-import { format } from "date-fns"
+import { format, parse } from "date-fns"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Calendar } from "@/components/ui/calendar"
 
@@ -135,25 +135,22 @@ export function ContactFormSection({ form, onSubmit }: ContactFormSectionProps) 
                   const today = new Date()
                   today.setHours(0, 0, 0, 0)
 
-                  function formatDateToLocalISO(date: Date) {
-                    const year = date.getFullYear()
-                    const month = String(date.getMonth() + 1).padStart(2, "0")
-                    const day = String(date.getDate()).padStart(2, "0")
-                    return `${year}-${month}-${day}`
+                  function formatDateToFormValue(date: Date) {
+                    return format(date, "MM-dd-yyyy")
                   }
 
-                  function parseLocalDate(value?: string) {
+                  function parseFormValue(value?: string) {
                     if (!value) return undefined
-                    const [year, month, day] = value.split("-").map(Number)
-                    const date = new Date(year, month - 1, day)
-                    return date
+                    return parse(value, "MM-dd-yyyy", new Date())
                   }
 
                   function isSameOrAfterToday(date: Date) {
                     const compareDate = new Date(date)
                     compareDate.setHours(0, 0, 0, 0)
+
                     const todayCompare = new Date()
                     todayCompare.setHours(0, 0, 0, 0)
+
                     return compareDate >= todayCompare
                   }
 
@@ -169,7 +166,7 @@ export function ContactFormSection({ form, onSubmit }: ContactFormSectionProps) 
                                 }`}
                             >
                               {field.value
-                                ? format(parseLocalDate(field.value)!, "MM/dd/yyyy")
+                                ? format(parseFormValue(field.value)!, "MM/dd/yyyy")
                                 : "Select date"}
                               <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                             </Button>
@@ -178,11 +175,10 @@ export function ContactFormSection({ form, onSubmit }: ContactFormSectionProps) 
                         <PopoverContent className="w-auto p-0" align="start">
                           <Calendar
                             mode="single"
-                            selected={parseLocalDate(field.value)}
+                            selected={parseFormValue(field.value)}
                             onSelect={(date) => {
                               if (date && isSameOrAfterToday(date)) {
-                                const localDate = new Date(date.getFullYear(), date.getMonth(), date.getDate())
-                                field.onChange(formatDateToLocalISO(localDate))
+                                field.onChange(formatDateToFormValue(date))
                               }
                             }}
                             disabled={(date) => !isSameOrAfterToday(date)}
