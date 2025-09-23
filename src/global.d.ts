@@ -72,6 +72,14 @@ declare global {
     }
   }
 
+  export interface TeamMember {
+    name: string
+    role: string
+    email: string
+    tel: string
+    image: string
+  }
+
   // Email types
   type QuoteEmailBody = {
     contactInformation: {
