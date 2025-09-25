@@ -32,7 +32,7 @@ export default function TeamCard({ name, role, email, tel, image, onHoverChange 
               className="w-40 h-40 rounded-full overflow-hidden"
             >
               <Image
-                src={image || "/placeholder.svg"}
+                src={"/contact/image.png"}
                 alt={name}
                 width={128}
                 height={128}
